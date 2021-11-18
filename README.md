@@ -1,2 +1,2 @@
 # VueJS
-Folder ini berisi tentang Track Record Pembelajaran VueJS
+Folder ini berisi Track Record Pembelajaran VueJS
