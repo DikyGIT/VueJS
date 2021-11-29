@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuex with CDN</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ $store.state.name }}</h1>
+        <p>{{ $store.state.paragraf }}</p>
+        <br>
+        <h1>{{ $store.state.count }}</h1>
+        <button @click='increment'>Tambah</button>
+        <button @click='decrement'>Kurang</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuex@3.6.2/dist/vuex.js"></script>
+
+    <script>
+        const store = new Vuex.Store({
+            state: { // berfungsi untuk menyimpan sebuah data
+                count: 0,
+                name: 'Diky Prayoga',
+                paragraf: 'Bismillah Belajar Vuex Pasti Bisa!'
+            },
+            mutations: { // berfungsi untuk mengubah sebauh data pada state
+                increment(state) {
+                    state.count++
+                },
+                decrement(state) {
+                    state.count--
+                }
+            },
+            actions: {
+
+            }
+        })
+
+        new Vue({
+            el: '#app', // berfungsi untuk merefentasikan sebuah wadah pada id app
+            data: {
+
+            },
+            store: store,
+            methods: {
+                increment() {
+                    this.$store.commit('increment')
+                },
+                decrement() {
+                    this.$store.commit('decrement')
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
