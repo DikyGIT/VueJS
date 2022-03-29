@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <title>Axios dengan CDN</title>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <h1 class="text-center">Aplikasi Vue Js dengan Axios</h1>
+        <p class="text-center">Belajar menggunakan axios untuk melakukan http request</p>
+
+        <div id="app">
+            <!-- row digunakan untuk membuat baris dan col-4 digunakan untuk membuat lebar card sebesar 4 column -->
+            <div class="row">
+                <div class="col-4" v-for="i in info" :key="i.id">
+                    <!-- untuk membuat card bootstrap, perlu card, lalu card-body, lalu card-title, dan card-text  -->
+                    <div class="card" style="margin-top: 20px;">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                {{ i.title }}
+                            </h5>
+                            <p class="card-text">
+                                {{ i.body }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        new Vue({
+            //vue js akan ditampilkan pada element id=app
+            el: '#app',
+            data() {
+                return {
+                    // membuat variabel 
+                    info: null
+                }
+            },
+            created() {
+                // mengambil data dari https://jsonplaceholder.typicode.com/posts
+                axios.get("https://jsonplaceholder.typicode.com/posts").then((response) => {
+
+                    //menyimpan data ke dalam variabel info
+                    this.info = response.data;
+                });
+            }
+        })
+    </script>
+</body>
+
+</html>

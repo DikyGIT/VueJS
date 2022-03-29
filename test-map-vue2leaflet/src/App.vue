@@ -1,6 +1,6 @@
 <template>
   <div style="height: 500px; width: 100%">
-    <div style="height: 200px; overflow: auto">
+    <div style="height: 140px; overflow: auto">
       <p>First marker is placed at {{ withPopup.lat }}, {{ withPopup.lng }}</p>
       <p>Center is at {{ currentCenter }} and the zoom is: {{ currentZoom }}</p>
       <button @click="showLongText">Toggle long popup</button>
@@ -11,7 +11,7 @@
       :zoom="zoom"
       :center="center"
       :options="mapOptions"
-      style="height: 80%"
+      style="height: 100%"
       @update:center="centerUpdate"
       @update:zoom="zoomUpdate"
     >

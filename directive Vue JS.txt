@@ -1,0 +1,6 @@
+v-once="" = berfungsi untukmengunci data yang di panggil agar tidak dapat di ubah
+v-text="" = berfungsi untuk mencetak teks biasa
+v-html="" = berfungsi untuk mencetak teks yang mempunyai element html
+v-bind:nama_attr atau :nama_attr = berfungsi untuk mengikat data yang ada pada sebuah object ataupun element css
+v-on:event="" atau @event="" = berfungsi untuk menjalankan sebuah event yang user lakukan
+v-model="" = berfungsi untuk memanggil data atau mengubah data, biasa digunakan untuk form input

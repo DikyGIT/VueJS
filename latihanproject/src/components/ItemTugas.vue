@@ -1,8 +1,9 @@
 <template>
   <div class="form-check mb-3">
+    {{ array }}
     <input
       class="form-check-input"
-      v-on:click="change"
+      @click="change(tugasSaya.namaTugas)"
       type="checkbox"
       value=""
       id="flexCheckDefault"
@@ -21,6 +22,16 @@
 export default {
   name: "ItemTugas",
   props: ["tugasSaya"],
+  data() {
+    return {
+      array: [],
+    };
+  },
+  methods: {
+    change: function (nama) {
+      this.array.push(nama);
+    },
+  },
 };
 </script>
 
